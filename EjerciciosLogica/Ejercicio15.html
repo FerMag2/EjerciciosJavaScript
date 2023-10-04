@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*15) Programa una función para convertir 
+        números de base binaria a decimal y viceversa, 
+        pe. miFuncion(100,2) devolverá 4 base 10.*/
+        let decimal = 0;
+        const conversor= (num=undefined, base=undefined) =>{
+            let numero = num.toString();
+            if(base==2){
+                for (let i= 0; i<numero.length; i++) {
+                let digito = parseInt(numero.charAt(i), 10);
+                let potencia = Math.pow(2, numero.length - i - 1);
+                decimal += digito * potencia;
+                }
+                console.log("El numero en decimal es "+ decimal);
+            }else if(base == 10){
+                if (num === 0) {
+                    console.log("El numero en binario es 0") 
+                }
+                let bin="";
+                while (num > 0) {
+                    let res=num%2;
+                    bin=res+bin;
+                    num=Math.floor(num/ 2);
+                }
+                console.log("El numero en binario es "+ bin)    
+            }
+        }
+        conversor(2,10)
+    </script>
+</body>
+</html>

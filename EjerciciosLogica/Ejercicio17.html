@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*17) Programa una función que dada una 
+        fecha válida determine cuantos años han pasado 
+        hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) 
+        devolverá 35 años (en 2020).*/
+        const anios= (fecha) =>{
+            let hoy = new Date(2023,10,4)
+            let total = hoy.getFullYear() - fecha.getFullYear();
+            if (hoy.getMonth() < fecha.getMonth() ||(hoy.getMonth() === fecha.getMonth() && hoy.getDate() < fecha.getDate())){
+                total--;
+            }
+            console.log(total)
+        }
+        anios(new Date(2021,10,3));
+    </script>
+</body>
+</html>
