@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*10) Programa una función que reciba un número 
+        y evalúe si es capicúa o no (que se lee igual en un sentido que en otro),
+         pe. miFuncion(2002) devolverá true.*/
+         let pal=""
+         const capicua= (numero=undefined) =>{
+            let num = numero.toString();
+            for(let i=0;i<num.length;i++) pal+=num.charAt(num.length-i-1)
+            if(pal==num){
+                return true
+            }else{
+                return false
+            }
+         }
+
+         if(capicua("20020021")==true){
+            console.log("Si es capicua")
+        }else{
+            console.log("No es capicua")
+        }
+    </script>
+</body>
+</html>
