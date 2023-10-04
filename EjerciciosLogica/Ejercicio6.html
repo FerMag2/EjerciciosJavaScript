@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*6) Programa una función para contar el 
+        número de veces que se repite una palabra 
+        en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") 
+        devolverá 2.*/
+        let cont=0;
+        const repetir= (cadena="", palabra="") =>{
+            let palabras = cadena.split(" ");
+            for(let i =0;i<palabras.length;i++){
+                if(palabra==palabras[i]){
+                    cont++
+                }
+            }
+            return cont
+        }
+        console.log(repetir("Hola Hola Hola hola hola", "Hola"))
+    </script>
+</body>
+</html>

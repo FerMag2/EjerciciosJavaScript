@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*5) Programa una función que invierta 
+        las palabras de una cadena de texto, pe. 
+        miFuncion("Hola Mundo") devolverá "odnuM aloH".*/
+        let palabra="";
+        const invertir= (cadena="") =>{
+            for(let i=0;i<cadena.length;i++) palabra+=cadena.charAt(cadena.length-i-1)
+            return palabra
+        }
+        console.log(invertir("Fernando Magdiel Chi Canul"))
+    </script>
+</body>
+</html>
