@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*12) Programa una función que determine si 
+        un número es primo (aquel que solo es divisible por sí mismo y 1) 
+        o no, pe. miFuncion(7) devolverá true.*/
+        let res=0;
+        const primo= (numero=undefined) =>{
+            for(let i=1;i<=numero;i++){
+                if(numero%i==0){
+                    res++;
+                }
+            }
+            if(res>2 || numero==1 || numero ==0){
+                return false;
+            }else {
+                return true;
+            }
+
+        }
+        if(primo(23)){
+            console.log("Es primo");
+        }else{
+            console.log("No es primo");
+        }
+    </script>
+</body>
+</html>

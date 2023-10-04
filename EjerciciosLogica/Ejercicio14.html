@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*14) Programa una función para convertir 
+        grados Celsius a Fahrenheit y viceversa, 
+        pe. miFuncion(0,"C") devolverá 32°F.*/
+        const conversor= (numero=undefined,letra="") =>{
+            if(letra=="C"){
+                let cel = (numero*9/5) + 32
+                console.log(cel+"°F");
+            }else if(letra=="F"){
+                let far = (numero-32)*5/9
+                console.log(far+"°C");
+            }
+        }
+        conversor(500,"C")
+        conversor(800,"F")
+    </script>
+</body>
+</html>
