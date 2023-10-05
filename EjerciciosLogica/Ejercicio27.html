@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Clase pelicula*/
+        class Pelicula {
+            constructor(datos) {
+                if (!Pelicula.validarIdIMDB(datos.idIMDB)) {
+                throw new Error("El ID de IMDB no es válido.");
+                }
+                
+                if (datos.titulo.length > 100) {
+                throw new Error("El título no debe rebasar los 100 caracteres.");
+                }
+                if (datos.director.length > 50) {
+                throw new Error("El director no debe rebasar los 50 caracteres.");
+                }
+                if (!Number.isInteger(datos.anioEstreno) || datos.anioEstreno.toString().length !== 4) {
+                throw new Error("El año de estreno debe ser un número entero de 4 dígitos.");
+                }
+                if (!Array.isArray(datos.paises)) {
+                throw new Error("Los países deben ser introducidos en forma de arreglo.");
+                }
+                if (!Array.isArray(datos.generos)) {
+                throw new Error("Los géneros deben ser introducidos en forma de arreglo.");
+                }
+                for (const genero of datos.generos) {
+                if (!Pelicula.generosAceptados().includes(genero)) {
+                    throw new Error("Género no válido: " + genero);
+                }
+                }
+                if (typeof datos.calificacion !== "number" || datos.calificacion < 0 || datos.calificacion > 10) {
+                throw new Error("La calificación debe ser un número entre 0 y 10.");
+                }
+
+                this.idIMDB = datos.idIMDB;
+                this.titulo = datos.titulo;
+                this.director = datos.director;
+                this.anioEstreno = datos.anioEstreno;
+                this.paises = datos.paises;
+                this.generos = datos.generos;
+                this.calificacion = datos.calificacion;
+            }
+            static validarIdIMDB(idIMDB) {
+                const patron = /^[A-Za-z]{2}[0-9]{7}$/;
+                return patron.test(idIMDB);
+                }
+            static generosAceptados() {
+                return [
+                "Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary",
+                "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music",
+                "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller",
+                "War", "Western"
+                ];
+            }
+            obtenerFichaTecnica() {
+                return `
+                Título: ${this.titulo}
+                Director: ${this.director}
+                Año de Estreno: ${this.anioEstreno}
+                Países de Origen: ${this.paises.join(", ")}
+                Géneros: ${this.generos.join(", ")}
+                Calificación IMDB: ${this.calificacion}
+                `;
+            }
+}
+const datosPeliculas = [
+  {
+    idIMDB: "tt1234567",
+    titulo: "Pelicula 1",
+    director: "Director 1",
+    anioEstreno: 2022,
+    paises: ["País 1", "País 2"],
+    generos: ["Action", "Adventure"],
+    calificacion: 8.5
+  },
+  {
+    idIMDB: "tt7654321",
+    titulo: "Pelicula 2",
+    director: "Director 2",
+    anioEstreno: 2023,
+    paises: ["País 3", "País 4"],
+    generos: ["Drama", "Romance"],
+    calificacion: 7.9
+  },
+  {
+    idIMDB: "tt5555555",
+    titulo: "Pelicula 3",
+    director: "Director 3",
+    anioEstreno: 2021,
+    paises: ["País 5"],
+    generos: ["Comedy", "Family"],
+    calificacion: 6.2
+  }
+];
+    const peliculas = [];
+    for (const datos of datosPeliculas) {
+        peliculas.push(new Pelicula(datos));
+    }
+    for (const pelicula of peliculas) {
+        console.log(pelicula.obtenerFichaTecnica());
+        console.log("\n");
+    }
+
+    </script>
+</body>
+</html>
