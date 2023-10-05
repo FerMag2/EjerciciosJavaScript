@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*21) Programa una función que dado un 
+        array numérico devuelve otro array con los 
+        números elevados al cuadrado, 
+        pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].*/
+        const vec= (vector) =>{
+            for(let i=0;i<vector.length;i++){
+                vector[i]= vector[i]*vector[i]
+            }
+            for(let i=0;i<vector.length;i++){
+                console.log(vector[i])
+            }
+        }
+        let numeros = [1, 2, 3, 4, 5];
+        vec(numeros)
+    </script>
+</body>
+</html>

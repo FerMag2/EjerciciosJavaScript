@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*22) Programa una función que dado un array 
+        devuelva el número mas alto y el más bajo de 
+        dicho array, pe. miFuncion([1, 4, 5, 99, -60]) 
+        devolverá [99, -60].*/
+        let aux=0
+        const vec= (vector) =>{
+            for(let i=0;i<vector.length-1;i++){
+                for (let j=0;j<vector.length-i-1;j++) {                                                              
+                    if (vector[j+1]<vector[j]) {
+                    aux = vector[j+1];
+                    vector[j+1]=vector[j];
+                    vector[j] = aux;
+                    }
+                }
+            }
+            console.log(vector[0])
+            console.log(vector[vector.length-1])
+        }
+        let numeros = [-3, 2, 30, 4, 5];
+        vec(numeros)
+    </script>
+</body>
+</html>
