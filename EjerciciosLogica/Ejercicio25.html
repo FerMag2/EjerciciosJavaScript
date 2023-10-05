@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*25) Programa una función que dado un arreglo 
+        de elementos, elimine los duplicados, pe. 
+        miFuncion(["x", 10, "x", 2, "10", 10, true, true]) 
+        devolverá ["x", 10, 2, "10", true].*/
+        const sinRepeticion= (vector) =>{
+            let vec2 = [];
+            for(let i=0;i<vector.length;i++){
+                if (vec2.indexOf(vector[i]) === -1) {
+                    vec2.push(vector[i]); 
+                }
+            }
+            for(let i=0;i<vec2.length;i++){
+                console.log(vec2[i])
+            }
+            
+        }
+        sinRepeticion(["x", 10, "x", 2, "10", 10, true, true])
+    </script>
+</body>
+</html>
