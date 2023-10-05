@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*20) Programa una función que valide que 
+        un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") 
+        devolverá verdadero.*/
+        const correo= (cadena="") =>{
+            var corr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return corr.test(cadena);
+        }
+        if(correo("jonmircha@gmail.com")){
+            console.log("El correo es válido");
+        }else{
+            console.log("El correo no es válido");
+        }
+    </script>
+</body>
+</html>

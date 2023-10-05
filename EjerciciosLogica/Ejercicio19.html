@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*19) Programa una función que valide 
+        que un texto sea un nombre válido, 
+        pe. miFuncion("Jonathan MirCha") devolverá verdadero*/
+        const repeticiones= (cadena="") =>{
+            let valid = /^[A-Za-z\s]+$/;
+            return valid.test(cadena);
+        }
+        if(repeticiones("Jonathan MirCha")){
+            console.log("El nombre es válido");
+        }else{
+            console.log("El nombre no es válido");
+        }
+    </script>
+</body>
+</html>

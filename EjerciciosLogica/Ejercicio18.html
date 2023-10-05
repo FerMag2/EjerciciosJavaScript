@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*18) Programa una función que dada una cadena 
+        de texto cuente el número de vocales y consonantes,
+         pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.*/
+         let cont1=0;
+         let cont2=0;
+         const repeticiones= (cadena="") =>{
+            for(let i=0;i<cadena.length;i++){
+                if(cadena.charAt(i)=="a" || cadena.charAt(i)=="e" || cadena.charAt(i)=="i" || cadena.charAt(i)=="o" || cadena.charAt(i)=="u" || cadena.charAt(i)=="A" ||cadena.charAt(i)=="E" ||cadena.charAt(i)=="I" ||cadena.charAt(i)=="O" ||cadena.charAt(i)=="U"){
+                    cont1++;
+                }else if(cadena.charAt(i)!=" "){
+                    cont2++;
+                }
+            }
+            console.log("El numero de vocales es "+ cont1)
+            console.log("El numero de consonantes es "+ cont2)
+         }
+         repeticiones("Hola Mundo")
+    </script>
+</body>
+</html>
