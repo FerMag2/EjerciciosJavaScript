@@ -15,19 +15,19 @@
                 }
                 
                 if (datos.titulo.length > 100) {
-                throw new Error("El título no debe rebasar los 100 caracteres.");
+                throw new Error("El título no debe rebasar los 100 caracteres");
                 }
                 if (datos.director.length > 50) {
-                throw new Error("El director no debe rebasar los 50 caracteres.");
+                throw new Error("El director no debe rebasar los 50 caracteres");
                 }
                 if (!Number.isInteger(datos.anioEstreno) || datos.anioEstreno.toString().length !== 4) {
-                throw new Error("El año de estreno debe ser un número entero de 4 dígitos.");
+                throw new Error("El año de estreno debe ser un número entero de 4 dígitos");
                 }
                 if (!Array.isArray(datos.paises)) {
-                throw new Error("Los países deben ser introducidos en forma de arreglo.");
+                throw new Error("Los países deben ser introducidos en forma de arreglo");
                 }
                 if (!Array.isArray(datos.generos)) {
-                throw new Error("Los géneros deben ser introducidos en forma de arreglo.");
+                throw new Error("Los géneros deben ser introducidos en forma de arreglo");
                 }
                 for (const genero of datos.generos) {
                 if (!Pelicula.generosAceptados().includes(genero)) {
@@ -73,7 +73,7 @@ const datosPeliculas = [
   {
     idIMDB: "tt1234567",
     titulo: "Pelicula 1",
-    director: "Director 1",
+    director: "Magdiel",
     anioEstreno: 2022,
     paises: ["País 1", "País 2"],
     generos: ["Action", "Adventure"],
@@ -82,16 +82,16 @@ const datosPeliculas = [
   {
     idIMDB: "tt7654321",
     titulo: "Pelicula 2",
-    director: "Director 2",
+    director: "Jordi",
     anioEstreno: 2023,
     paises: ["País 3", "País 4"],
     generos: ["Drama", "Romance"],
     calificacion: 7.9
   },
   {
-    idIMDB: "tt5555555",
-    titulo: "Pelicula 3",
-    director: "Director 3",
+    idIMDB: "at5555555",
+    titulo: "Mis compas",
+    director: "Martin",
     anioEstreno: 2021,
     paises: ["País 5"],
     generos: ["Comedy", "Family"],
